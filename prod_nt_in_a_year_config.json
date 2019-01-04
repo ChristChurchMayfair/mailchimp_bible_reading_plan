@@ -1,0 +1,14 @@
+{
+  "mailchimp" : {
+    "enabled" : true,
+    "list_id" : "5759e092ac",
+    "campaign_folder": "NT2019",
+    "subject_prefix" : "CCM NT2019",
+    "from_email" : "noreply@christchurchmayfair.org",
+    "from_name" : "Christ Church Mayfair"
+  },
+  "plan" : {
+    "file" : "./reading_plan.csv"
+  },
+  "facebook_link" : "https://www.facebook.com/groups/606713609764732/"
+}
