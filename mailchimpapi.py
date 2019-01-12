@@ -136,6 +136,11 @@ class MailchimpAPI:
 
         url = self.base_url + '/campaigns/' + campaign_id + '/actions/schedule'
 
+        unschedule_url = self.base_url + "/campaigns/" + campaign_id + "/actions/unschedule"
+
+        unschedule_response = self.__post_json(unschedule_url, None)
+        print(unschedule_response)
+
         schedule_defintion = {
             "schedule_time": datetime.isoformat(),
             "timewarp": False,
