@@ -71,10 +71,16 @@ class BiblePassageReference:
             start_verse = 1
             end_verse = -1
 
+        if match.group(1) and match.group(2) and not match.group(3) and match.group(4) and not match.group(5):
+            start_chapter = int(match.group(2))
+            start_verse = 1
+            end_chapter = int(match.group(4))
+            end_verse = -1
+
         if match.group(3):
             start_verse = int(match.group(3))
 
-        if match.group(4) and not match.group(5):
+        if match.group(1) and match.group(2) and match.group(3) and match.group(4) and not match.group(5):
             end_verse = int(match.group(4))
             end_chapter = start_chapter
 

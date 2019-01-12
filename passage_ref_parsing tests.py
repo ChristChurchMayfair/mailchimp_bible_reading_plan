@@ -103,3 +103,17 @@ class TestPassageReferenceParsing(unittest.TestCase):
 
         self.assertEqual(True, passage_reference.is_whole_book())
         self.assertEqual(False, passage_reference.is_whole_chapter())
+
+    def test_passage_with_multiple_chapters(self):
+        reference_string = 'Psalm 5-6'
+
+        passage_reference = BiblePassageReference.parse(reference_string)
+
+        self.assertEqual("Psalm", passage_reference.book)
+        self.assertEqual(5, passage_reference.starting_chapter, "starting chapter")
+        self.assertEqual(1, passage_reference.starting_verse, "starting verse")
+        self.assertEqual(6, passage_reference.end_chapter, "end chapter")
+        self.assertEqual(-1, passage_reference.end_verse, "end verse")
+
+        self.assertEqual(False, passage_reference.is_whole_book())
+        self.assertEqual(True, passage_reference.is_whole_chapter())
